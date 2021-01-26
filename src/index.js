@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	function stackedCards () {
 
+        var restArrCount;
 		var stackedOptions = 'Bottom'; //Change stacked cards view from 'Bottom', 'Top' or 'None'.
 		var rotate = true; //Activate the elements' rotation for each move on stacked cards.
 		var items = 3; //Number of visible elements when the stacked options are bottom or top.
@@ -25,28 +26,32 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		obj = document.getElementById('stacked-cards-block');
 		stackedCardsObj = obj.querySelector('.stackedcards-container');
-		listElNodesObj = stackedCardsObj.children;
+        listElNodesObj = stackedCardsObj.children;
+        
 		
 		topObj = obj.querySelector('.stackedcards-overlay.top');
 		rightObj = obj.querySelector('.stackedcards-overlay.right');
 		leftObj = obj.querySelector('.stackedcards-overlay.left');
 		
+		getRestaurants();
 		countElements();
 		currentElement();
         changeBackground();
 		listElNodesWidth = stackedCardsObj.offsetWidth;
 		currentElementObj = listElNodesObj[0];
-		updateUi();
+        updateUi();
+        
 		
         //Prepare elements on DOM
         ////////////////////////////////////////////// APP CODES HERE /////////////////////////////////////////////
 
-        getRestaurants();
+       
 
         function getRestaurants(){
             fetch("http://localhost:3000/restaurants")
                 .then(resp => resp.json())
                 .then(restaurantArray => {
+                    restaurantArr = restaurantArray.length
                     restaurantArray.forEach(restaurant => renderRestaurant(restaurant))
                 })
         }
@@ -84,9 +89,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
             </div>
             `
             container.append(cardDiv);
-
+            
         }
-
 
 
 
@@ -185,7 +189,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		// Usable functions
 		function countElements() {
-			maxElements = listElNodesObj.length;
+            // maxElements = listElNodesObj.length;
+            maxElements = restArrCount;
 			if(items > maxElements){
 				items = maxElements;
 			}
@@ -474,6 +479,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				listElNodesObj[currentPosition - 1].classList.remove('stackedcards-active');
 				listElNodesObj[currentPosition - 1].classList.add('stackedcards-hidden');
 				listElNodesObj[currentPosition].classList.add('stackedcards-active');
+				// console.log("Hidden")
 			}		 
 		};
 	
@@ -488,8 +494,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     //On the actions onSwipeLeft, onSwipeRight and onSwipeTop you need to remove the currentPosition variable (currentPosition = currentPosition + 1) and the function setActiveHidden
 
 		function removeElement() {
-      currentElementObj.remove();
-      if(!(currentPosition >= maxElements)){
+        currentElementObj.remove();
+        if(!(currentPosition >= maxElements)){
 				listElNodesObj[currentPosition].classList.add('stackedcards-active');
 			}		
 		};
