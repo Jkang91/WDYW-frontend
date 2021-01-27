@@ -1,0 +1,29 @@
+.index {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: -10;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    position: bottom;
+  }
+
+  .show-middle {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: -10;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    position: bottom;
+  }
+
+
+ img {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 1)
+}

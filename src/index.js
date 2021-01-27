@@ -1,9 +1,8 @@
 // JavaScript Document
 document.addEventListener("DOMContentLoaded", function(event) {
-
+	
 	function stackedCards () {
 
-        var restArrCount;
 		var stackedOptions = 'Bottom'; //Change stacked cards view from 'Bottom', 'Top' or 'None'.
 		var rotate = true; //Activate the elements' rotation for each move on stacked cards.
 		var items = 3; //Number of visible elements when the stacked options are bottom or top.
@@ -51,11 +50,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
             fetch("http://localhost:3000/restaurants")
                 .then(resp => resp.json())
                 .then(restaurantArray => {
-                    restaurantArr = restaurantArray.length
-                    restaurantArray.forEach(restaurant => renderRestaurant(restaurant))
+					let newArr = []
+					for(i = 0; i < 10; i++){
+						const random = Math.floor(Math.random() * restaurantArray.length);
+						newItem = restaurantArray[random]
+						newArr.push(newItem)
+					}
+                   newArr.forEach(restaurant => renderRestaurant(restaurant))
                 })
-        }
-        
+		}
+
+	
+		
+		
+		
         function renderRestaurant(restaurantObj){
             console.log("FETCHED")
 
@@ -67,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             // const name = 
 
             cardDiv.innerHTML += `
-            <div class="card-content">
+            <div class="card-content" id="current-box" data-id="${restaurantObj.id}">
               <div class="card-image"><img src=${restaurantObj.img_url} width="100%" height="100%"/></div>
               <div class="card-titles">
                 <h1 id="rest">${restaurantObj.name}</h1> <!--Restaurant Name---->
@@ -92,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             
         }
 
+		
 
 
 
@@ -189,8 +198,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		// Usable functions
 		function countElements() {
-            // maxElements = listElNodesObj.length;
-            maxElements = restArrCount;
+            maxElements = listElNodesObj.length;
+           
 			if(items > maxElements){
 				items = maxElements;
 			}
@@ -236,10 +245,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					resetOverlayLeft();
 				},300);
 			}
+			countElements();
 		};
 		
 		//Functions to swipe right elements on logic external action.
-		function onActionRight() {
+		function onActionRight(event) {
 			if(!(currentPosition >= maxElements)){
 				if(useOverlays) {
 					rightObj.classList.remove('no-transition');
@@ -253,6 +263,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					resetOverlayRight();
 				},300);
 			}
+			// let currentCard = document.querySelector(".card").childNodes
+			countElements()
+			// let userArray = []
+			// console.log(currentCard)
+			
 		};
 		
 		//Functions to swipe top elements on logic external action.
@@ -271,6 +286,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					resetOverlays();
 				},300); //wait animations end
 			}
+			countElements();
 		};
 		
 		//Swipe active card to left.
