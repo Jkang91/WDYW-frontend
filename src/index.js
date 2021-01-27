@@ -1,10 +1,14 @@
-// JavaScript Document
-document.addEventListener("DOMContentLoaded", function (event) {
+// 1// JavaScript Document
 
-	function stackedCards() {
+///Start sesssion = 1st resultarray
 
-		// var arrayRest;
-		// var newArray
+///second session = 2nd resultarray
+
+
+
+// document.addEventListener("DOMContentLoaded", function (event) {
+
+function stackedCards() {
 		var stackedOptions = 'Bottom'; //Change stacked cards view from 'Bottom', 'Top' or 'None'.
 		var rotate = true; //Activate the elements' rotation for each move on stacked cards.
 		var items = 3; //Number of visible elements when the stacked options are bottom or top.
@@ -24,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		var elementHeight;
 		var obj;
 		var elTrans;
+		
 
 		obj = document.getElementById('stacked-cards-block');
 		stackedCardsObj = obj.querySelector('.stackedcards-container');
@@ -45,9 +50,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 		//Prepare elements on DOM
 		////////////////////////////////////////////// APP CODES HERE /////////////////////////////////////////////
-
-
-
 		function getRestaurants() {
 			fetch("http://localhost:3000/restaurants")
 				.then(resp => resp.json())
@@ -59,27 +61,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
 						newArr.push(newItem)
 					}
 					window.arrayRest = newArr
-					arrayRest.unshift(0)
-					arrayRest.unshift(0)
-					console.log(arrayRest)
+					var arrayRest2 = [...arrayRest];
+					window.arrayFinal = arrayRest.concat(arrayRest2); 
+					console.log("MainArray", arrayFinal)
 
-					newArr.forEach(restaurant => renderRestaurant(restaurant))
+
+					arrayFinal.forEach(restaurant => renderRestaurant(restaurant))
 				})
 		}
-
-
-
-
-
 		function renderRestaurant(restaurantObj) {
 			console.log("FETCHED")
 
 			const container = document.querySelector('.stackedcards-container')
 			const cardDiv = document.createElement('div')
 			cardDiv.className = "card"
-			// const restImg = document.querySelector('.card-image')
-			// restImg.src = restaurantObj.img_url
-			// const name = 
 
 			cardDiv.innerHTML += `
             <div class="card-content" id="current-box" data-id="${restaurantObj.id}">
@@ -104,12 +99,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             </div>
             `
 			container.append(cardDiv);
-
 		}
-
-
-
-
 
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		addMargin = elementsMargin * (items - 1) + 'px';
@@ -246,17 +236,39 @@ document.addEventListener("DOMContentLoaded", function (event) {
 					transformUi(0, 0, 1, leftObj);
 
 				}
-
 				setTimeout(function () {
 					onSwipeLeft();
 					resetOverlayLeft();
 				}, 300);
+			}if(count <= 11 && count > 1){
+			
+				arrayFinal.shift()
+				console.log("Result 1", resultArray)
+				
+				count--
+	
 			}
-			// newArray.shift(0)
+
+			else if(count === 1){
+				arrayFinal.shift()
+				console.log("Main Arr", arrayFinal)
+		
+			}
+			else{
+				count-- 
+			}
+				console.log(count)
+			
+				console.log("MainArr", arrayFinal)
+
+			
 			countElements();
 		};
 
 		//Functions to swipe right elements on logic external action.
+		let count = 13
+		window.resultArray = []
+		window.resultArray2 = []
 		function onActionRight(event) {
 			if (!(currentPosition >= maxElements)) {
 				if (useOverlays) {
@@ -265,23 +277,43 @@ document.addEventListener("DOMContentLoaded", function (event) {
 					rightObj.style.zIndex = '8';
 					transformUi(0, 0, 1, rightObj);
 				}
-
+				
 				setTimeout(function () {
 					onSwipeRight();
 					resetOverlayRight();
 				}, 300);
 			}
-
-			if (arrayRest[0] === 0) {
-				arrayRest.shift(0)
+			
+			if(count <= 11 && count > 1){
+				resultArray.push(arrayFinal[0])
+				arrayFinal.shift()
+				console.log("Result 1", resultArray)
+				
+				count--
+				// console.log(count)
+				// console.log(resultArray)
+				// console.log(restaurantArray1)
 			}
-			// window.resultArr = []
-			// if(newArray[0] === 0 ){
-			// 	newArray.shift(0)
-			// }else{
-			// 	resultArr.push(newArray[0])
-			// 	newArray.shift(0)
-			// }
+
+			else if(count === 1){
+				resultArray2.push(arrayFinal[0])
+				arrayFinal.shift()
+			
+				console.log("Result 2", resultArray2)
+
+		
+			}
+			else{
+				count-- 
+			}
+				console.log(count)
+			
+				console.log("MainArr", arrayFinal)
+
+
+			// let btn = event.target.parentElement.parentElement.parentElement.children[1].children[0].children[2].children[0].dataset.id
+			// arrayRest.shift()
+			// console.log(arrayRest)
 			countElements()
 
 		};
@@ -800,5 +832,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	}
 
 	stackedCards();
+const resultBtn = document.querySelector('.result')
+let comArray = []
+resultBtn.addEventListener('click', () => {
+	
+	function commonElement(array1, array2){
+		for(i = 0; i < array1.length; ++i){
+			for(j = 0; j < array2.length; ++j){
+				if(array1[i] == array2[j]){
+					comArray.push(array1[i])
+				}
+			}
+		}
+		return np.unique(comArray)
+		console.log(comArray)
+	}	
 
-});
+	commonElement(resultArray, resultArray2)
+})
+
+
+	
+
+
