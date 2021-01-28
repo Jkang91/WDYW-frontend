@@ -915,36 +915,6 @@ resultBtn.addEventListener('click', () => {
 	
 })
 
-///////////
-
-
-// spiceObj.ingredients.forEach(ingredient => {
-// 	renderIngredients(ingredient)
-
-// })
-
-// newQuoteForm.addEventListener("submit", (event) => {
-//     event.preventDefault()
-
-//     let newAuthor = event.target.author.value
-//     let newQuote = event.target.quote.value
-
-//     fetch("http://localhost:3000/quotes", {
-//         method:"POST",
-//         headers: {
-//             "content-type": "application/json"
-//         },
-//         body:JSON.stringify({
-//             quote: newQuote,
-//             author: newAuthor
-//         })
-//     })
-//         .then(r => r.json())
-//         .then((newQuoteObj) => {   ////Defining form values(newQuoteObj)
-//             newQuoteObj.likes = []
-//             renderQuote(newQuoteObj)  ///// Passing newQuote.Obj in 
-//         })
-// })
 
 
 
