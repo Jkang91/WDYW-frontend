@@ -1879,11 +1879,6 @@ function stackedCards2() {
     }
 
     function reRandomize(event) {
-        // const hiddenState = document.querySelector('.final-state')
-        // document.querySelector('.stage').classList.add('active')
-        // hiddenState.classList.remove('active')
-        // hiddenState.classList.add('hidden')
-        // stackedCards()
 
         let body = document.querySelector('#body')
 
