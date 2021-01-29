@@ -10,13 +10,33 @@ body {
 }
 
 .background-0 { background: #C87D26; }
-.background-1 { background: #569D99; }
+.background-1 { background: #74bebb; }
 .background-2 { background: #740039; }
 .background-3 { background: #839FC5; }
-.background-4 { background: #6A4F76; }
-.background-5 { background: #57636D; }
-.background-6 { background: #6D5242; }
-.background-7 { background: #4F5051; }
+.background-4 { background: #ff943d; }
+.background-5 { background: #f377e3; }
+.background-6 { background: #63cfbd; }
+.background-7 { background: #C87D26; }
+.background-8 { background: #569D99; }
+.background-9 { background: #740039; }
+.background-10 { background: #839FC5; }
+.background-11 { background: #886497; }
+.background-12 { background: #f377e3; }
+.background-13 { background: #63cfbd; }
+.background-14 { background: #C87D26; }
+.background-15 { background: #569D99; }
+.background-16 { background: #740039; }
+.background-17 { background: #839FC5; }
+.background-18 { background: #6A4F76; }
+.background-19 { background: #57636D; }
+.background-20 { background: #63cfbd; }
+.background-21 { background: #C87D26; }
+.background-22 { background: #569D99; }
+.background-23 { background: #740039; }
+.background-24 { background: #839FC5; }
+.background-25 { background: #63cfbd; }
+
+
 
 .background-0,
 .background-1,
@@ -25,7 +45,25 @@ body {
 .background-4,
 .background-5,
 .background-6,
-.background-7 {
+.background-7, 
+.background-8,
+.background-9,
+.background-10,
+.background-11,
+.background-12,
+.background-13,
+.background-14,
+.background-15,
+.background-16,
+.background-17,
+.background-18,
+.background-19,
+.background-20,
+.background-21,
+.background-22, 
+.background-23,
+.background-24,
+.background-25{
   transition: all 400ms ease;
 }
 
@@ -135,7 +173,7 @@ body {
  .text {
    font-weight: 400;
    color: #ffffff;
-   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+   text-shadow: 6px 4px 4px rgba(0, 0, 0, 2);
  }
  
  .popular-destinations-images {
@@ -355,3 +393,72 @@ body {
 
 /*----- Stacked Cards component css END -----*/
 
+.buttons {
+
+  font-family: Marker Felt, fantasy;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  color: white;
+  font-size: 20px;
+
+}
+.buttons2 {
+
+  font-family: Marker Felt, fantasy;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  color: white;
+  font-size: 50px;
+}
+
+.avatar {
+	/* width: 150px;
+	height: 150px; */
+	/* box-sizing: border-box;
+	border: 5px white solid;
+	border-radius: 50%; */
+	overflow: hidden;
+	/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
+	transform: translatey(0px);
+	animation: float 1.8s ease-in-out infinite;
+	/* img { width: 100%; height: auto; } */
+}
+
+@keyframes float {
+	0% {
+		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
+		transform: translatey(0px);
+	}
+	50% {
+		/* box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2); */
+		transform: translatey(-10px);
+	}
+	100% {
+		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
+		transform: translatey(0px);
+	}
+}
+
+@keyframes swing {
+  0%, 100% { transform: rotate(-30deg); }
+  20% {transform:scale(.95);}
+  50% { transform: rotate(30deg); }
+  80% {transform:scale(.95);}
+}
+
+#sweetlandia {
+  animation: swing 2s infinite ease-in-out;
+}
+
+.event{
+  /* margin:50px auto; */
+  text-align:center;
+}

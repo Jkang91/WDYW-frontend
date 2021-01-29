@@ -2,50 +2,41 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Title</title>
-    <!-- <script type="text/javascript" src="./src/index.js" defer></script> -->
-    <!-- <script type="text/javascript" src="./src/index2.js" defer></script> -->
+    <title>What Do You Want?</title>
+
     <script type="text/javascript" src="./src/index3.js" defer></script>
     <link rel="stylesheet" type="text/css" href="./styles/styles.css" defer/>
     
     <meta name="viewport" content="initial-scale=1,width=device-width">
-    <!-- <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
- -->
-
   </head>
     <body id="body">
       
       <!-- Code Starts Here ------------------------------------------------>
         <div class="handle-user">
-          <div class="log-in" >
-             <h5>Log In</h5>
+          <div class="log-in" ></br>
              <form id="log-in"> 
              <input class="logInInput" type="text" name="Log in">
-             <input class="logInBtn" type="submit" value="Log In">
+             <input class="logInBtn buttons" type="submit" value="Log In">
              </form>
            </div>
            
            <div class="sign-up">
-             <form id="sign">
-               <h5>Sign Up!</h5>
+             <form id="sign"></br>
                <input class="signup" type="text" name="Sign up">
-               <input class="signBtn" type="submit" value="Create User">
+               <input class="signBtn buttons" type="submit" value="Sign Up">
              </form>
            </div>  
          </div>
  
  
  <div class="stage">
-    <div class="title"><img src="https://lh3.googleusercontent.com/pw/ACtC-3dE8lUaK8VLwqbY62nfP48wXxZIy0i-d4ClWTca1iOyBVbqDRE6jdpx9rA8-shc3uARkulwzoubNxPzGP2ALvKfhzM76966ntt2aAfW1laZcnqePVO-tlIf-n3Zagm-k5SqaILGBwJBFgMKSas2IJig=w678-h108-no?authuser=0" width="100%" height="100%"/></div>
-      <div id="stacked-cards-block" class="stackedcards stackedcards--animatable init">
-        <div class="stackedcards-container">
+    <div class="title avatar"><img src="https://lh3.googleusercontent.com/pw/ACtC-3dE8lUaK8VLwqbY62nfP48wXxZIy0i-d4ClWTca1iOyBVbqDRE6jdpx9rA8-shc3uARkulwzoubNxPzGP2ALvKfhzM76966ntt2aAfW1laZcnqePVO-tlIf-n3Zagm-k5SqaILGBwJBFgMKSas2IJig=w678-h108-no?authuser=0" width="80%" height="80%"/></div>
+      
+    
+        <div id="stacked-cards-block" class="stackedcards stackedcards--animatable init">
+            <div class="stackedcards-container">
 
             <!-- Square container here ---------------------------------------------------------------->
-
-            <!-- InnerHTML --------------------------------->
-         
-          <!-- InnerHTML End --------------------------------------------------------------------------->
-
 
           <div class="card">
             <div class="card-content">
@@ -58,9 +49,12 @@
             <div class="card-footer">
               <div class="popular-destinations-text"></div>
               <div class="popular-destinations-images">
-                <div class="circle"><img src="https://image.ibb.co/nQrkYS/romantic_1.jpg" width="100%" height="100%"/></div>
-                <div class="circle"><img src="https://image.ibb.co/ioqOL7/romantic_2.jpg" width="100%" height="100%"/></div>
-                <div class="circle"><img src="https://image.ibb.co/mXSESn/romantic_3.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+            
+                <div class="circle event"><img src="data:image/png;base64,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" alt='SweetLandia' id='sweetlandia' width="100%" height="100%"/></div>
               </div>
             </div>
           </div>
@@ -76,9 +70,76 @@
             <div class="card-footer">
               <div class="popular-destinations-text"></div>
               <div class="popular-destinations-images">
-                <div class="circle"><img src="https://image.ibb.co/nQrkYS/romantic_1.jpg" width="100%" height="100%"/></div>
-                <div class="circle"><img src="https://image.ibb.co/ioqOL7/romantic_2.jpg" width="100%" height="100%"/></div>
-                <div class="circle"><img src="https://image.ibb.co/mXSESn/romantic_3.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+            
+                <div class="circle event"><img src="data:image/png;base64,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" alt='SweetLandia' id='sweetlandia' width="100%" height="100%"/></div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <div class="card-content">
+              <div class="card-image"><img src="https://lh3.googleusercontent.com/pw/ACtC-3dfRGYPr-_zcvk2rWbrm6xrTM7dutFzIXfe9ImSY6tMMzz0tLaA8L9-tLxWaBIOqDTaBFiWalxyRWjJdpia0_Jxs1dWkug_qCPO3nNb_cT_z5eKCZVMhjunMkmTnhZeuvCv4pPe1X_q9i7UDpXPZD-Y=w678-h634-no?authuser=0" width="100%" height="100%"/></div>
+              <div class="card-titles">
+                <h1><br/></h1>
+                <h3></h3>
+              </div>  
+            </div>
+            <div class="card-footer">
+              <div class="popular-destinations-text"></div>
+              <div class="popular-destinations-images">
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+            
+                <div class="circle avatar"><img src="data:image/png;base64,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" width="100%" height="100%"/></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <div class="card-image"><img src="https://lh3.googleusercontent.com/pw/ACtC-3evJOsGNopGBaa7kHhU4WVc-6WoT5x7qwtVX7uPOvb8JGA3k6hP8JZTBaQ222vS4DmOSEMIgpvwB26_WeQUi8TLzlv2hZuOMhilXsJ1LFtZpdbrzZ5BMqUlN4cczzJa8OEcYVxjFlwgwvItaRTHAZ53=w678-h634-no?authuser=0" width="100%" height="100%"/></div>
+              <div class="card-titles">
+                <h1><br/></h1>
+                <h3></h3>
+              </div>  
+            </div>
+            <div class="card-footer">
+              <div class="popular-destinations-text"></div>
+              <div class="popular-destinations-images">
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+            
+                <div class="circle event"><img src="data:image/png;base64,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" alt='SweetLandia' id='sweetlandia' width="100%" height="100%"/></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              <div class="card-image"><img src="https://lh3.googleusercontent.com/pw/ACtC-3dmlH1Y9rU_Kv8AqaHLPhsGqMgiZaCrYsxjkboRw-zUlfoMSsXIkPEMgYx9Qpeh1nPzdA_eVNqdCV8KTqcbamiX9gjvgOIDSN-vd2fA0FiApJ28fnofH3vKm4eRWFtC9q7nrNc8IqBD7WkrtzCzveQP=w678-h634-no?authuser=0" width="100%" height="100%"/></div>
+              <div class="card-titles">
+                <h1><br/></h1>
+                <h3></h3>
+              </div>  
+            </div>
+            <div class="card-footer">
+              <div class="popular-destinations-text"></div>
+              <div class="popular-destinations-images">
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+                <div class="circle"><img src="https://www.houseofcharity.org/wp-content/uploads/2019/07/White-Square.jpg" width="100%" height="100%"/></div>
+            
+                <div class="circle avatar"><img src="data:image/png;base64,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" width="100%" height="100%"/></div>
               </div>
             </div>
           </div>
@@ -95,10 +156,9 @@
 
       <!-- Buttons ------------------------------------------------------------------>
       <div class="global-actions">
-          <!-- <div class="top-action"><img src="https://image.ibb.co/m1ykYS/rank_army_star_2_3x.png" width="18" height="16"/></div> -->
           <div class="left-action"><img src="https://image.ibb.co/heTxf7/20_status_close_3x.png" width="26" height="26"/></div>
           <div class="right-action"><img src="https://image.ibb.co/dCuESn/Path_3x.png" width="30" height="28"/></div>
-          <!-- <div class="top-action2"><img src="https://image.ibb.co/m1ykYS/rank_army_star_2_3x.png" width="18" height="16"/></div> -->
+         
     </div>
     <!--  End of Buttons -------------------------------------------------------------------------------------------------------->
   </div>
@@ -107,8 +167,9 @@
   <div class="final-state hidden">
     
     <h2>
-      Show results</br>
-      <button class="result" type="button">Show matches</button></dr>
+      <p class="avatar"><img src="https://lh3.googleusercontent.com/pw/ACtC-3fUnm6RD65mVgOPmLsNaybySYXQWxJ0ckm_86E4nT38s0LvDQWw79K3yp3oGp0UDLmZR51kK2RoOSlG5EtQTKvWZWqLBnOovYaWutDixlCjafeCDx6p5jR9yi3br2MgjPeVnma7dIYlzpqf4kJpTHiW=w678-h108-no?authuser=0" width="100%" height="100%"/></p></br>
+
+      <button class="result buttons2" type="button">Show matches</button></dr>
     
     </h2>
       
